@@ -1,0 +1,10 @@
+Bundle-Name: fast-develop-api
+Bundle-SymbolicName: com.liferay.fast.develop.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.liferay.fast.develop.exception,\
+	com.liferay.fast.develop.model,\
+	com.liferay.fast.develop.service,\
+	com.liferay.fast.develop.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../fast-develop-service/service.xml

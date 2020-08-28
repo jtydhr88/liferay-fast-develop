@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.3.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_3_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.liferay.fast.develop">
+	<namespace>FASTDEPLOY</namespace>
+	<entity local-service="true" name="LiferayModule" remote-service="false" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="moduleId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="moduleName" type="String" />
+		<column name="workspaceId" type="long" />
+		<column name="location" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="moduleName" />
+		</order>
+
+		<finder name="WorkspaceId" return-type="Collection">
+			<finder-column name="workspaceId" />
+		</finder>
+	</entity>
+	<entity local-service="true" name="LiferayWorkspace" remote-service="false" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="workspaceId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="workspaceName" type="String" />
+		<column name="location" type="String" />
+		<column name="buildType" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="workspaceName" />
+		</order>
+	</entity>
+	<exceptions>
+		<exception>ExistingAppName</exception>
+		<exception>InvalidAppName</exception>
+		<exception>InvalidLocation</exception>
+	</exceptions>
+</service-builder>

@@ -1,0 +1,4 @@
+Bundle-Activator: m2.M2Activator
+Bundle-Name: m2
+Bundle-SymbolicName: m2
+Bundle-Version: 1.0.0
